@@ -15,15 +15,9 @@ using System.Text;
 namespace Reports_UdeM.Module.BusinessObjects
 {
     [DefaultClassOptions]
-    //[ImageName("BO_Contact")]
-    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
-    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
-    //[Persistent("DatabaseTableName")]
-    // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
+    [DefaultProperty("NombreCompleto")]
     public class Persona : BaseObject
-    { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        // Use CodeRush to create XPO classes and properties with a few keystrokes.
-        // https://docs.devexpress.com/CodeRushForRoslyn/118557
+    {
         public Persona(Session session)
             : base(session)
         {
@@ -31,12 +25,43 @@ namespace Reports_UdeM.Module.BusinessObjects
         public override void AfterConstruction()
         {
             base.AfterConstruction();
-            // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
+            FechaRegistro = DateTime.Now;
         }
 
-        string nombre;
+        Usuario usuario;
+        CatalogoSexo sexo;
+        DateTime fechaRegistro;
+        string apellido2;
+        string apellido1;
+        string nombre1;
+        string nombre2;
+
+        public string NombreCompleto => string.Join(" ", new string[] { Nombre1?.Trim(), Nombre2?.Trim(), Apellido1?.Trim(), Apellido2?.Trim() }).Trim();
+
+        [Persistent]
+        public string Nombres => string.Join(" ", new string[] { Nombre1?.Trim(), Nombre2?.Trim() }).Trim();
+
+        [Persistent]
+        public string Apellidos => string.Join(" ", new string[] { Apellido1?.Trim(), Apellido2?.Trim() }).Trim();
 
         [Size(50)]
-        public string Nombre { get => nombre; set => SetPropertyValue(nameof(Nombre), ref nombre, value); }
+        public string Nombre1 { get => nombre1; set => SetPropertyValue(nameof(Nombre1), ref nombre1, value); }
+
+        [Size(50)]
+        public string Nombre2 { get => nombre2; set => SetPropertyValue(nameof(Nombre2), ref nombre2, value); }
+
+        [Size(50)]
+        public string Apellido1 { get => apellido1; set => SetPropertyValue(nameof(Apellido1), ref apellido1, value); }
+
+        [Size(50)]
+        public string Apellido2 { get => apellido2; set => SetPropertyValue(nameof(Apellido2), ref apellido2, value); }
+
+        public DateTime FechaRegistro { get => fechaRegistro; set => SetPropertyValue(nameof(FechaRegistro), ref fechaRegistro, value); }
+
+        public CatalogoSexo Sexo { get => sexo; set => SetPropertyValue(nameof(Sexo), ref sexo, value); }
+
+
+        [Association("Usuario-Persona")]
+        public Usuario Usuario{ get => usuario; set => SetPropertyValue(nameof(Usuario), ref usuario, value); }
     }
 }

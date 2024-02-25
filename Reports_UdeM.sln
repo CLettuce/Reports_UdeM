@@ -9,6 +9,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reports_UdeM.Module.Win", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reports_UdeM.Win", "Reports_UdeM.Win\Reports_UdeM.Win.csproj", "{B2EF47CA-40EA-4278-9D8C-DBD3F8001BA1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{9A97E6CB-42DF-4F95-A77D-00C1E8FDB827}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{8EF96BC7-330F-494A-B75F-6D7E2148BDD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reports_UdeM.Common", "Reports_UdeM.Common\Reports_UdeM.Common.csproj", "{8CCDDCC8-31EE-4ED2-A639-B467EBD23927}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{65E2A124-E2C7-403F-96FB-227B1BBFBFF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,8 +42,23 @@ Global
 		{B2EF47CA-40EA-4278-9D8C-DBD3F8001BA1}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
 		{B2EF47CA-40EA-4278-9D8C-DBD3F8001BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2EF47CA-40EA-4278-9D8C-DBD3F8001BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CCDDCC8-31EE-4ED2-A639-B467EBD23927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CCDDCC8-31EE-4ED2-A639-B467EBD23927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CCDDCC8-31EE-4ED2-A639-B467EBD23927}.EasyTest|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CCDDCC8-31EE-4ED2-A639-B467EBD23927}.EasyTest|Any CPU.Build.0 = Debug|Any CPU
+		{8CCDDCC8-31EE-4ED2-A639-B467EBD23927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CCDDCC8-31EE-4ED2-A639-B467EBD23927}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1813C922-C009-46D6-AC88-ED425CE35D58} = {9A97E6CB-42DF-4F95-A77D-00C1E8FDB827}
+		{5F41B436-645C-48A7-B8B5-E7267FAE089D} = {9A97E6CB-42DF-4F95-A77D-00C1E8FDB827}
+		{B2EF47CA-40EA-4278-9D8C-DBD3F8001BA1} = {65E2A124-E2C7-403F-96FB-227B1BBFBFF0}
+		{8CCDDCC8-31EE-4ED2-A639-B467EBD23927} = {8EF96BC7-330F-494A-B75F-6D7E2148BDD3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {372D592F-8B53-486A-B943-02CAE0683738}
 	EndGlobalSection
 EndGlobal

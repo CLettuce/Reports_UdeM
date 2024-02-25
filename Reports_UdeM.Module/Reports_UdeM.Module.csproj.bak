@@ -39,70 +39,67 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v23.2">
+    <Reference Include="DevExpress.Data.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Drawing.v23.2">
+    <Reference Include="DevExpress.Drawing.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.AuditTrail.Xpo.v23.2">
+    <Reference Include="DevExpress.ExpressApp.AuditTrail.Xpo.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Chart.v23.2">
+    <Reference Include="DevExpress.ExpressApp.Chart.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v23.2">
+    <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Kpi.v23.2">
+    <Reference Include="DevExpress.ExpressApp.Kpi.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Objects.v23.2">
+    <Reference Include="DevExpress.ExpressApp.Objects.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.ReportsV2.v23.2">
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Security.v23.2">
+    <Reference Include="DevExpress.ExpressApp.Security.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Security.Xpo.v23.2">
+    <Reference Include="DevExpress.ExpressApp.Security.Xpo.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.StateMachine.v23.2">
+    <Reference Include="DevExpress.ExpressApp.StateMachine.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.v23.2">
+    <Reference Include="DevExpress.ExpressApp.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Validation.v23.2">
+    <Reference Include="DevExpress.ExpressApp.Validation.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Xpo.v23.2">
+    <Reference Include="DevExpress.ExpressApp.Xpo.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Images.v23.2">
+    <Reference Include="DevExpress.Images.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Persistent.Base.v23.2">
+    <Reference Include="DevExpress.Persistent.Base.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Persistent.BaseImpl.Xpo.v23.2">
+    <Reference Include="DevExpress.Persistent.BaseImpl.Xpo.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Printing.v23.2.Core">
+    <Reference Include="DevExpress.Printing.v23.1.Core">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Xpo.v23.2">
+    <Reference Include="DevExpress.Xpo.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Charts.v23.2.Core">
+    <Reference Include="DevExpress.XtraCharts.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v23.2">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.XtraReports.v23.2">
+    <Reference Include="DevExpress.XtraReports.v23.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="mscorlib">
@@ -132,15 +129,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessObjects\CatalogoCarrera.cs" />
-    <Compile Include="BusinessObjects\CatalogoProfesores.cs" />
-    <Compile Include="BusinessObjects\CatalogoSexo.cs" />
-    <Compile Include="BusinessObjects\CatalogoUbicacion.cs" />
     <Compile Include="BusinessObjects\Persona.cs" />
-    <Compile Include="BusinessObjects\PersonaIdentificacion.cs" />
-    <Compile Include="BusinessObjects\Solicitudes.cs" />
-    <Compile Include="BusinessObjects\TipoIdentificacion.cs" />
-    <Compile Include="BusinessObjects\Usuario.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="BusinessObjects\ApplicationUser.cs" />
     <Compile Include="BusinessObjects\ApplicationUserLoginInfo.cs" />
@@ -173,10 +162,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="23.2.3">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
 </Project>
