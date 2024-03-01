@@ -37,8 +37,6 @@ namespace Reports_UdeM.Module.BusinessObjects
         }
 
 
-
-        Solicitudes solicitud;
         string nota;
         Solicitudes.EstadoSolicitud estadoAnterior;
         Solicitudes.EstadoSolicitud estadoNuevo;

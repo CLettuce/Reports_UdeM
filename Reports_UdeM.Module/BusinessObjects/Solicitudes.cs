@@ -44,7 +44,6 @@ namespace Reports_UdeM.Module.BusinessObjects
         CatalogoUbicacion ubicacionDePeticion;
         CatalogoProfesores profesor;
         CatalogoCarrera carrera;
-        SolicitudesAuditoria propertyName;
         DateTime fechaRegistro;
         Persona persona;
         EstadoSolicitud estado;

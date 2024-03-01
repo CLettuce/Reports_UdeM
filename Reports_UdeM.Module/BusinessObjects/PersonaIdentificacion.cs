@@ -36,7 +36,17 @@ namespace Reports_UdeM.Module.BusinessObjects
         }
 
 
+        TipoIdentificacion tipo;
+        string numeroIdentificacion;
         bool activo;
+
+
+
+        [Size(100)]
+        public string NumeroIdentificacion { get => numeroIdentificacion; set => SetPropertyValue(nameof(NumeroIdentificacion), ref numeroIdentificacion, value); }
+
+
+        public TipoIdentificacion Tipo { get => tipo; set => SetPropertyValue(nameof(Tipo), ref tipo, value); }
 
         public bool Activo { get => activo; set => SetPropertyValue(nameof(Activo), ref activo, value); }
     }
