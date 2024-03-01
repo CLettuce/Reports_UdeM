@@ -41,12 +41,14 @@ namespace Reports_UdeM.Module.BusinessObjects
             Rechazado = 4
         }
 
+        CatalogoUbicacion ubicacionDePeticion;
+        CatalogoProfesores profesor;
+        CatalogoCarrera carrera;
+        SolicitudesAuditoria propertyName;
         DateTime fechaRegistro;
         Persona persona;
         EstadoSolicitud estado;
         string descripcion;
-
-
 
         public Persona Persona { get => persona; set => SetPropertyValue(nameof(Persona), ref persona, value); }
 
@@ -57,5 +59,12 @@ namespace Reports_UdeM.Module.BusinessObjects
         public string Descripcion { get => descripcion; set => SetPropertyValue(nameof(Descripcion), ref descripcion, value); }
 
         public string NombreCompletoPersona => Persona is null ? "N/A" : Persona.NombreCompleto;
+
+        public CatalogoCarrera Carrera { get => carrera; set => SetPropertyValue(nameof(Carrera), ref carrera, value); }
+
+        public CatalogoProfesores Profesor { get => profesor; set => SetPropertyValue(nameof(Profesor), ref profesor, value); }
+
+        public CatalogoUbicacion UbicacionDePeticion { get => ubicacionDePeticion; set => SetPropertyValue(nameof(UbicacionDePeticion), ref ubicacionDePeticion, value); }
+
     }
 }

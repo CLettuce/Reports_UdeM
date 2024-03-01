@@ -29,9 +29,9 @@ namespace Reports_UdeM.Module.BusinessObjects
         }
 
 
+        bool usuarioExiste;
         EstadoUsuario estado;
         string passwordAgain;
-        bool usuarioExiste;
         string username;
         string password;
         DateTime fechaRegistro;
@@ -48,7 +48,7 @@ namespace Reports_UdeM.Module.BusinessObjects
         public string Username { get => username; set => SetPropertyValue(nameof(Username), ref username, value); }
 
         [NonPersistent]
-        public bool UsuarioExiste { get; set; }
+        public bool UsuarioExiste { get => usuarioExiste; set => SetPropertyValue(nameof(UsuarioExiste), ref usuarioExiste, value); }
 
         [Size(100)]
         public string Password { get => password; set => SetPropertyValue(nameof(Password), ref password, value); }

@@ -35,7 +35,6 @@ namespace Reports_UdeM.Module.BusinessObjects
         }
 
 
-        Guid oid;
         string nombre;
 
         [Size(50)]

@@ -1,2 +1,29 @@
-﻿<?xml version="1.0" ?>
-<Application />
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems>
+    <Items>
+      <Item Id="SolicitudesdeUsuarios" Caption="Solicitudes de Usuarios" Index="0" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Solicitudes_ListView" ViewId="Solicitudes_ListView" ObjectKey="" ImageName="BO_Position" Index="0" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Administracion" Caption="Administracion" Index="1" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Persona_ListView" ViewId="Persona_ListView" ObjectKey="" ImageName="BO_Department" IsNewNode="True" />
+          <Item Id="Usuario_ListView" ViewId="Usuario_ListView" ObjectKey="" ImageName="GroupByResource" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Default" Index="2">
+        <Items>
+          <Item Id="Persona_ListView" Removed="True" />
+          <Item Id="Solicitudes_ListView" Removed="True" />
+          <Item Id="Usuario_ListView" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="23.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="23.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>

@@ -20,25 +20,47 @@ namespace Reports_UdeM.Module.BusinessObjects
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    public class CatalogoCarrera : BaseObject
+    public class SolicitudesAuditoria : BaseObject
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
         // Use CodeRush to create XPO classes and properties with a few keystrokes.
         // https://docs.devexpress.com/CodeRushForRoslyn/118557
-        public CatalogoCarrera(Session session)
+        public SolicitudesAuditoria(Session session)
             : base(session)
         {
         }
         public override void AfterConstruction()
         {
             base.AfterConstruction();
+            Fecha = DateTime.Now;
+            UsuarioAud = SecuritySystem.CurrentUserName;
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
-        string carrera;
+
+
+
+        Solicitudes solicitud;
+        string nota;
+        Solicitudes.EstadoSolicitud estadoAnterior;
+        Solicitudes.EstadoSolicitud estadoNuevo;
+        string usuarioAud;
+        DateTime fecha;
+
+        public DateTime Fecha { get => fecha; set => SetPropertyValue(nameof(Fecha), ref fecha, value); }
 
 
         [Size(50)]
-        public string Carrera { get => carrera; set => SetPropertyValue(nameof(Carrera), ref carrera, value); }
+        public string UsuarioAud { get => usuarioAud; set => SetPropertyValue(nameof(UsuarioAud), ref usuarioAud, value); }
 
 
+        public Solicitudes.EstadoSolicitud EstadoAnterior { get => estadoAnterior; set => SetPropertyValue(nameof(EstadoAnterior), ref estadoAnterior, value); }
+
+        public Solicitudes.EstadoSolicitud EstadoNuevo { get => estadoNuevo; set => SetPropertyValue(nameof(EstadoNuevo), ref estadoNuevo, value); }
+
+
+        [Size(SizeAttribute.Unlimited)]
+        public string Nota { get => nota; set => SetPropertyValue(nameof(Nota), ref nota, value); }
+
+
+       
     }
 }

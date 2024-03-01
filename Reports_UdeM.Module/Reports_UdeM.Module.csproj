@@ -139,6 +139,7 @@
     <Compile Include="BusinessObjects\Persona.cs" />
     <Compile Include="BusinessObjects\PersonaIdentificacion.cs" />
     <Compile Include="BusinessObjects\Solicitudes.cs" />
+    <Compile Include="BusinessObjects\SolicitudesAuditoria.cs" />
     <Compile Include="BusinessObjects\TipoIdentificacion.cs" />
     <Compile Include="BusinessObjects\Usuario.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
