@@ -17,9 +17,8 @@ namespace Reports_UdeM.Module.BusinessObjects
     [DefaultClassOptions]
 
     public class Solicitudes : BaseObject
-    { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        // Use CodeRush to create XPO classes and properties with a few keystrokes.
-        // https://docs.devexpress.com/CodeRushForRoslyn/118557
+    {
+
         public Solicitudes(Session session)
             : base(session)
         {
@@ -41,15 +40,14 @@ namespace Reports_UdeM.Module.BusinessObjects
             Rechazado = 4
         }
 
+        Persona persona;
         CatalogoUbicacion ubicacionDePeticion;
         CatalogoProfesores profesor;
         CatalogoCarrera carrera;
         DateTime fechaRegistro;
-        Persona persona;
         EstadoSolicitud estado;
         string descripcion;
 
-        public Persona Persona { get => persona; set => SetPropertyValue(nameof(Persona), ref persona, value); }
 
         public DateTime FechaRegistro { get => fechaRegistro; set => SetPropertyValue(nameof(FechaRegistro), ref fechaRegistro, value); }
 
@@ -57,13 +55,14 @@ namespace Reports_UdeM.Module.BusinessObjects
         [Size(200)]
         public string Descripcion { get => descripcion; set => SetPropertyValue(nameof(Descripcion), ref descripcion, value); }
 
-        public string NombreCompletoPersona => Persona is null ? "N/A" : Persona.NombreCompleto;
-
         public CatalogoCarrera Carrera { get => carrera; set => SetPropertyValue(nameof(Carrera), ref carrera, value); }
 
         public CatalogoProfesores Profesor { get => profesor; set => SetPropertyValue(nameof(Profesor), ref profesor, value); }
 
         public CatalogoUbicacion UbicacionDePeticion { get => ubicacionDePeticion; set => SetPropertyValue(nameof(UbicacionDePeticion), ref ubicacionDePeticion, value); }
+
+        [Association("Persona-Solicitudes")]
+        public Persona Persona { get => persona; set => SetPropertyValue(nameof(Persona), ref persona, value); }
 
     }
 }

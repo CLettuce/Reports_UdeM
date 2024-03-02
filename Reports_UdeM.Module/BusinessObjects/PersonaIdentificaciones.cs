@@ -1,4 +1,4 @@
-﻿    using DevExpress.Data.Filtering;
+﻿using DevExpress.Data.Filtering;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.DC;
 using DevExpress.ExpressApp.Model;
@@ -20,24 +20,35 @@ namespace Reports_UdeM.Module.BusinessObjects
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    public class TipoIdentificacion : BaseObject
+    public class PersonaIdentificaciones : BaseObject
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
         // Use CodeRush to create XPO classes and properties with a few keystrokes.
         // https://docs.devexpress.com/CodeRushForRoslyn/118557
-        public TipoIdentificacion(Session session)
+        public PersonaIdentificaciones(Session session)
             : base(session)
         {
         }
         public override void AfterConstruction()
         {
             base.AfterConstruction();
-            // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
+            Activo = true;
+            
         }
 
+        Persona persona;
+        bool activo;
+        string numeroIdentificacion;
+        TipoIdentificaciones tipo;
 
-        string nombre;
+        public TipoIdentificaciones Tipo { get => tipo; set => SetPropertyValue(nameof(Tipo), ref tipo, value); }
 
-        [Size(100)]
-        public string Nombre { get => nombre; set => SetPropertyValue(nameof(Nombre), ref nombre, value); }
+        [Size(50)]
+        public string NumeroIdentificacion { get => numeroIdentificacion; set => SetPropertyValue(nameof(NumeroIdentificacion), ref numeroIdentificacion, value); }
+
+        public bool Activo { get => activo; set => SetPropertyValue(nameof(Activo), ref activo, value); }
+
+
+        [Association("Persona-Identificaciones")]
+        public Persona Persona { get => persona; set => SetPropertyValue(nameof(Persona), ref persona, value); }
     }
 }

@@ -28,6 +28,8 @@ namespace Reports_UdeM.Module.BusinessObjects
             FechaRegistro = DateTime.Now;
         }
 
+
+        PersonaIdentificaciones personasIdentificaciones;
         Usuario usuario;
         CatalogoSexo sexo;
         DateTime fechaRegistro;
@@ -37,12 +39,6 @@ namespace Reports_UdeM.Module.BusinessObjects
         string nombre2;
 
         public string NombreCompleto => string.Join(" ", new string[] { Nombre1?.Trim(), Nombre2?.Trim(), Apellido1?.Trim(), Apellido2?.Trim() }).Trim();
-
-        [Persistent]
-        public string Nombres => string.Join(" ", new string[] { Nombre1?.Trim(), Nombre2?.Trim() }).Trim();
-
-        [Persistent]
-        public string Apellidos => string.Join(" ", new string[] { Apellido1?.Trim(), Apellido2?.Trim() }).Trim();
 
         [Size(50)]
         public string Nombre1 { get => nombre1; set => SetPropertyValue(nameof(Nombre1), ref nombre1, value); }
@@ -60,8 +56,14 @@ namespace Reports_UdeM.Module.BusinessObjects
 
         public CatalogoSexo Sexo { get => sexo; set => SetPropertyValue(nameof(Sexo), ref sexo, value); }
 
-
         [Association("Usuario-Persona")]
-        public Usuario Usuario{ get => usuario; set => SetPropertyValue(nameof(Usuario), ref usuario, value); }
+        public Usuario Usuario { get => usuario; set => SetPropertyValue(nameof(Usuario), ref usuario, value); }
+
+        [Association("Persona-Solicitudes")]
+        public XPCollection<Solicitudes> Solicitude { get { return GetCollection<Solicitudes>(nameof(Solicitude)); } }
+
+        [Association("Persona-Identificaciones")]
+        public XPCollection<PersonaIdentificaciones> Identificaciones { get { return GetCollection<PersonaIdentificaciones>(nameof(Identificaciones)); } }
+
     }
 }

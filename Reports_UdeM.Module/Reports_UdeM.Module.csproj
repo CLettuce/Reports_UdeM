@@ -137,10 +137,9 @@
     <Compile Include="BusinessObjects\CatalogoSexo.cs" />
     <Compile Include="BusinessObjects\CatalogoUbicacion.cs" />
     <Compile Include="BusinessObjects\Persona.cs" />
-    <Compile Include="BusinessObjects\PersonaIdentificacion.cs" />
+    <Compile Include="BusinessObjects\PersonaIdentificaciones.cs" />
     <Compile Include="BusinessObjects\Solicitudes.cs" />
-    <Compile Include="BusinessObjects\SolicitudesAuditoria.cs" />
-    <Compile Include="BusinessObjects\TipoIdentificacion.cs" />
+    <Compile Include="BusinessObjects\TipoIdentificaciones.cs" />
     <Compile Include="BusinessObjects\Usuario.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="BusinessObjects\ApplicationUser.cs" />
@@ -155,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BusinessObjects\ReadMe.txt" />
